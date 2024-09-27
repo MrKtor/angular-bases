@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Character } from '../interfaces/character.interfaces';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-dbz-main-page',
@@ -8,15 +9,10 @@ import { Character } from '../interfaces/character.interfaces';
 
 export class MainPageComponent {
 
-  public characters: Character[] = [
-    {
-      name: 'Krillin',
-      power: 1000
-    },
-    {
-      name: 'Goku',
-      power: 9500
-    }
-  ];
+  // #dbzService = inject(DbzService); Es un ejemplo de inyección de dependencias
+  //De la misma forma que es el constructor
 
+  constructor(public dbzService: DbzService) {
+
+  }
 }
