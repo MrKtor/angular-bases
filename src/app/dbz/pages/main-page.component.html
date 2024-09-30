@@ -5,8 +5,8 @@
 
   <div class="col">
               <!-- Parentesis son eventos, llaves cuadradas atributos -->
-    <dbz-list [characterList]="dbzService.characters"
-              (onDelete)="dbzService.deleteCharacterById($event)"></dbz-list>
+    <dbz-list [characterList]="characters"
+              (onDelete)="onDeleteCharacter($event)"></dbz-list>
               <!-- el onDelete es un evento y tiene que tener el mismo nombre
               que el output ej:
               @output
@@ -16,7 +16,7 @@
 
   <div class="col">
                       <!-- $event es un nombre específico que recibe el parametro -->
-    <dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)"></dbz-add-character>
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
 
   </div>
 </div>
